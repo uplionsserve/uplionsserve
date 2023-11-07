@@ -11,4 +11,9 @@ export default defineConfig({
 	adapter: node({
 		mode: "middleware",
 	}),
+	vite: {
+		ssr: {
+			noExternal: ["cookie", "string-width"],
+		},
+	},
 })
