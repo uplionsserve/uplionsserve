@@ -23,5 +23,8 @@
 	},
 	"devDependencies": {
 		"@types/lodash-es": "^4.17.8"
-	}
+	},
+	"trustedDependencies": [
+		"cookie"
+	]
 }

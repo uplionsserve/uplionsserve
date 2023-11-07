@@ -11,8 +11,4 @@ export default defineConfig({
 	adapter: node({
 		mode: "middleware",
 	}),
-	build: {
-		server: "../../web-server/src/uplionsserve/server",
-		client: "../../web-server/src/uplionsserve/client",
-	},
 })
