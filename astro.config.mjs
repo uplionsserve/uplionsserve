@@ -7,5 +7,4 @@ export default defineConfig({
 	integrations: [svelte(), tailwind()],
 	site: "https://uplionsserve.org",
 	output: "static",
-	outDir: "../../.vercel/output/static",
 })
