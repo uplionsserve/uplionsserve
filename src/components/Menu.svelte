@@ -361,8 +361,7 @@
 						</a>
 						<hr class="mx-8 border-[rgba(0,0,0,0.075)]" />
 						<a
-							href="{import.meta.env
-								.PUBLIC_DEFENSEAGAINSTDIABETES_URL}/#donation"
+							href="https://donorbox.org/uplionsserve-dad"
 							class="py-4 hover:bg-[#f4f4f4] rounded-md transition-all"
 						>
 							Defense Against Diabetes
@@ -375,7 +374,6 @@
 							Project Kidsight
 						</a>
 						<hr class="mx-8 border-[rgba(0,0,0,0.075)]" />
-						<!-- Change on site launch -->
 						<a
 							href="https://donorbox.org/lions-hunger"
 							class="py-4 hover:bg-[#f4f4f4] rounded-md transition-all"
