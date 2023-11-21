@@ -7,7 +7,6 @@
 			"@layouts/*": ["./src/layouts/*"],
 			"@scripts/*": ["./src/scripts/*"],
 			"@styles/*": ["./src/styles/*"]
-		},
-		"types": ["bun-types"]
+		}
 	}
 }
