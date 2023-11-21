@@ -233,8 +233,7 @@
 							</a>
 							<hr class="mx-8 border-[rgba(0,0,0,0.075)]" />
 							<a
-								href="{import.meta.env
-									.PUBLIC_DEFENSEAGAINSTDIABETES_URL}/#donation"
+								href="https://donorbox.org/uplionsserve-dad"
 								class="py-2 hover:bg-[#f4f4f4] rounded-md transition-all {atTop
 									? 'text-[#000]'
 									: 'text-white hover:text-upls-orange'}"
@@ -251,7 +250,6 @@
 								Project Kidsight
 							</a>
 							<hr class="mx-8 border-[rgba(0,0,0,0.075)]" />
-							<!-- TODO: Fix Hunger link on site launch -->
 							<a
 								href="https://donorbox.org/lions-hunger"
 								class="py-2 hover:bg-[#f4f4f4] rounded-md transition-all {atTop
