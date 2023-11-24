@@ -1,6 +1,12 @@
 <script lang="ts">
 	import { debounce } from "lodash-es"
 
+	$: headerClass = `
+		w-full fixed z-20 flex justify-between items-center transition-all before:w-full before:absolute before:left-0 before:bottom-0 before:-z-20 before:bg-white before:drop-shadow-menu before:transition-all before:duration-300
+		${atTop ? "before:h-0" : "before:h-full"}
+		${donationOpen ? "md:before:translate-y-0" : "md:before:-translate-y-0"}
+	`
+
 	// Functionality for opening/closing hamburger menu
 	let menuOpen = false
 	const handleMenu = () => {
@@ -43,22 +49,7 @@
 	on:load={initializeAtTop}
 	on:scroll={debounce(handleScroll, 100, { leading: true })}
 />
-<header
-	class="
-    w-full
-    fixed z-20
-    flex justify-between items-center
-    transition-all
-    
-    before:w-full
-    before:absolute before:left-0 before:bottom-0 before:-z-20
-    before:bg-white before:drop-shadow-menu
-    {atTop ? 'before:h-0' : 'before:h-full'}
-    {donationOpen
-		? 'md:before:translate-y-0'
-		: 'md:before:-translate-y-[240px]'}
-    before:transition-all before:duration-300"
->
+<header class={headerClass}>
 	<div
 		class="
             w-full px-4 sm:px-8 md:px-16
@@ -87,6 +78,7 @@
 					/>
 				</a>
 			</div>
+
 			<button
 				on:click={handleMenu}
 				class="
@@ -103,16 +95,20 @@
                         transition-all duration-200 ease-[cubic-bezier(.61, .16, .07, 1.46)]
                         {menuOpen
 						? 'rotate-[135deg] translate-y-[3.5px]'
-						: '-rotate-45 -translate-y-[2.5px]'}">&#x221F;</span
+						: '-rotate-45 -translate-y-[2.5px]'}"
 				>
+					&#x221F;
+				</span>
 			</button>
 		</div>
-		<div
+
+		<!-- Hamburger button -->
+		<button
 			on:click={handleMenu}
 			on:keypress={handleMenuKey}
 			class="
                 w-10 md:hidden
-                relative z-10
+                relative z-20
                 flex flex-col items-end
                 cursor-pointer
                 transition-all duration-300 ease-[cubic-bezier(.61, .16, .07, 1.46)]
@@ -140,7 +136,7 @@
                     rounded-full border-none
                     {atTop ? 'bg-white' : 'bg-upls-orange'}"
 			/>
-		</div>
+		</button>
 		<div class="md:pt-2 hidden md:flex items-start gap-4">
 			<a
 				href="https://facebook.com/uplionsserve"
@@ -174,18 +170,17 @@
 			>
 				<div
 					class="
-                        w-full max-w-xs md:w-44 overflow-hidden
+                        w-full max-w-xs md:w-44
                         relative
                         rounded-t-md
                         text-center
-                        cursor-pointer
                         transition-all"
 				>
-					<div
+					<button
 						on:keypress={handleDonation}
 						on:click={handleDonation}
 						class="
-                            pt-3 pb-2.5
+                            pt-3 pb-2.5 w-full rounded-md
                             relative z-10
                             transition-all duration-300
                             {atTop
@@ -202,14 +197,14 @@
 								: '-rotate-45 -translate-y-[2.5px]'}
                             select-none">&#x221F;</span
 						>
-					</div>
+					</button>
 					<div
 						class="
-                            z-0
+                            z-10 absolute overflow-hidden -translate-y-2
                             transition-all duration-300
                             {donationOpen
-							? 'translate-y-0'
-							: '-translate-y-[248px]'}"
+							? 'max-h-screen'
+							: 'max-h-0 pointer-events-none'}"
 					>
 						<div
 							class="
@@ -221,7 +216,6 @@
                                 font-bold
                                 transition-all duration-300"
 						>
-							<!-- TODO: Fix CC link on website launch -->
 							<a
 								href="{import.meta.env
 									.PUBLIC_CHILDHOODCANCER_URL}/#donation"
@@ -267,18 +261,17 @@
 	<menu
 		class="
         w-full h-screen md:h-auto pt-32 pr-4 md:w-auto md:pt-0
-        fixed top-0 z-30 md:static md:top-auto md:z-0
+        fixed top-0 z-10 md:static md:top-auto md:z-0
         flex justify-end md:block
         {!menuOpen ? 'invisible md:visible' : 'visible'}"
 	>
-		<!-- svelte-ignore a11y-click-events-have-key-events -->
-		<div
+		<button
 			on:click={handleMenu}
 			class="
                 w-screen h-[100dvh]
                 fixed top-0 left-0 -z-30
                 transition-all duration-300 ease-[cubic-bezier(.61, .16, .07, 1.46)]
-                {!menuOpen ? 'md:invisible' : ''}"
+                {!menuOpen ? 'md:invisible' : 'backdrop-blur-md'}"
 		/>
 		<ul
 			class="
