@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { programDirectories } from "@/config"
 	import { debounce } from "lodash-es"
 
 	$: headerClass = `
@@ -217,8 +218,7 @@
                                 transition-all duration-300"
 						>
 							<a
-								href="{import.meta.env
-									.PUBLIC_CHILDHOODCANCER_URL}/#donation"
+								href="{programDirectories.childhoodCancer}/#donation"
 								class="py-2 hover:bg-[#f4f4f4] rounded-md transition-all {atTop
 									? 'text-[#000]'
 									: 'text-white hover:text-upls-orange'}"
@@ -232,7 +232,7 @@
 									? 'text-[#000]'
 									: 'text-white hover:text-upls-orange'}"
 							>
-								Defense Against Diabetes
+								Diabetes Awareness And Action
 							</a>
 							<hr class="mx-8 border-[rgba(0,0,0,0.075)]" />
 							<a
@@ -283,22 +283,16 @@
                 {!menuOpen ? 'opacity-0 invisible' : 'opacity-100 visited:'}
                 {atTop ? 'md:pt-32' : 'md:pt-28'}"
 		>
-			<a
-				on:click={handleMenu}
-				href={import.meta.env.PUBLIC_CHILDHOODCANCER_URL}
+			<a on:click={handleMenu} href={programDirectories.childhoodCancer}
 				>Childhood Cancer</a
 			>
-			<a
-				on:click={handleMenu}
-				href={import.meta.env.PUBLIC_DEFENSEAGAINSTDIABETES_URL}
-				>Defense Against Diabetes</a
+			<a on:click={handleMenu} href={programDirectories.diabetes}
+				>Diabetes Awareness And Action</a
 			>
-			<a
-				on:click={handleMenu}
-				href={import.meta.env.PUBLIC_PROJECTKIDSIGHT_URL}
+			<a on:click={handleMenu} href={programDirectories.vision}
 				>Project Kidsight</a
 			>
-			<a on:click={handleMenu} href={import.meta.env.PUBLIC_HUNGER_URL}
+			<a on:click={handleMenu} href={programDirectories.hunger}
 				>D10 Hunger</a
 			>
 			<div
@@ -346,8 +340,7 @@
 					>
 						<!-- TODO: Fix CC link on website launch -->
 						<a
-							href="{import.meta.env
-								.PUBLIC_CHILDHOODCANCER_URL}/#donation"
+							href="{programDirectories.childhoodCancer}/#donation"
 							class="py-4 hover:bg-[#f4f4f4] rounded-md transition-all"
 						>
 							Childhood Cancer
@@ -357,7 +350,7 @@
 							href="https://donorbox.org/uplionsserve-dad"
 							class="py-4 hover:bg-[#f4f4f4] rounded-md transition-all"
 						>
-							Defense Against Diabetes
+							Diabetes Awareness And Action
 						</a>
 						<hr class="mx-8 border-[rgba(0,0,0,0.075)]" />
 						<a
