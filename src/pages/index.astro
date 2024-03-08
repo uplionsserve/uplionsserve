@@ -4,6 +4,8 @@ import Banner from "@components/Banner.svelte"
 import BrandPreviews from "@components/BrandPreviews.svelte"
 import ProgramBanner from "@components/ProgramBanner.svelte"
 import Button from "@components/Button.svelte";
+
+import { programDirectories } from "@/config"
 ---
 
 <SiteLayout
@@ -34,27 +36,28 @@ import Button from "@components/Button.svelte";
     <ProgramBanner 
         title="Childhood Cancer"
         description="Lions Clubs International has adopted Childhood Cancer as an initiative on a global level. Each year, more than 300,000 children are diagnosed with cancer across the world. This means that a child is diagnosed with cancer every 2 minutes. The Lions have begun working with this initiative to explore new ways in which Lions can help children with cancer in our own communities."
-        link={import.meta.env.PUBLIC_CHILDHOODCANCER_URL}
+        link={programDirectories.childhoodCancer}
         src="/graphics/brands/logo-cc-fullcolor.svg"
         bg={["from-cc-gold", "to-cc-light-gold"]} />
     <ProgramBanner 
-        title="Defense Against Diabetes"
+        title="Diabetes Awareness And Action"
         description="We serve to reduce the prevalence of diabetes and to improve the quality of life for those living with diabetes in our communities. During this unprecedented time, the Lions of District 10 have responded with urgency and care developing initiatives and ways to help our communities."
-        link={import.meta.env.PUBLIC_DEFENSEAGAINSTDIABETES_URL}
-        src="/graphics/brands/logo-dad-fullcolor.svg"
-        bg={["from-dad-blue", "to-dad-light-blue"]} />
+        link={programDirectories.diabetes}
+        src="/graphics/brands/logo-daa-color.svg"
+        bg={["from-daa-blue", "to-daa-light-blue"]} />
         
     <ProgramBanner
         title="Hunger"
         id="hunger"
         description="We see how the hunger and nutrition crisis affects local communities and believe true community improvement depends on the thriving of its members through access to nutritious, healthy, fresh foods. We support hands-on, classroom and online education that teaches people of all ages how to grow, utilize and preserve their own grown food. We serve to improve human flourishing! "
-        link={import.meta.env.PUBLIC_HUNGER_URL}
+        link={programDirectories.hunger}
         src="/graphics/brands/logo-hg-white.svg"
         bg={["from-hg-green", "to-hg-light-green"]} />
     <ProgramBanner
         title="Project KidSight"
         id="project-kidsight"
         description="Project KidSight is a program designed to identify treatable and preventable causes of vision loss in preschool children (ages 6 months to 5 years). Children of all ages can be screened but the target of this project is preschool children."
+        link={programDirectories.vision}
         src="/graphics/brands/logo-pks-fullcolor.svg"
         bg={["from-pks-pink", "to-pks-light-pink"]} />
     <Banner>
