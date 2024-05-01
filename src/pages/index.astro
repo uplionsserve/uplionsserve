@@ -3,73 +3,135 @@ import SiteLayout from "@layouts/SiteLayout.astro"
 import Banner from "@components/Banner.svelte"
 import BrandPreviews from "@components/BrandPreviews.svelte"
 import ProgramBanner from "@components/ProgramBanner.svelte"
-import Button from "@components/Button.svelte";
+import Button from "@components/Button.svelte"
 
 import { programDirectories } from "@/config"
 ---
 
-<SiteLayout
-    description="Test">
-    <Banner customClasses={`
+<SiteLayout description="Test">
+	<Banner
+		customClasses={`
         min-h-[100vh] pt-48
         justify-center gap-12
-        bg-gradient-to-t from-upls-orange to-upls-light-orange bg-no-repeat`}>
-        <div class="
-            w-3/4 max-w-lg lg:w-3/4 lg:max-w-3xl xl:max-w-4xl
-            flex flex-col gap-8">
-            <img src="graphics/brands/logo-upls-white.svg" />
-            <p class="font-bold max-w-3xl mx-auto xl:pt-8">Bringing diverse people together to serve their communities is what Lions Clubs are all about. Become part of the largest service and humanitarian organization in the world. Lions and Leos are raising awareness for our causes around the world.</p>
-        </div>
-        <BrandPreviews client:load />
-        <div class="
-                px-12
-                flex flex-col sm:flex-row items-center gap-10">
-            <div class="flex flex-col items-center gap-6">
-                <img src="/graphics/brands/logo-thrivent.svg" alt="Thrivent logo" class="h-10 md:h-7">
-            </div>
-            <div class="
-                    flex flex-col items-center gap-3">
-                <img src="/graphics/brands/logo-benevity.svg" alt="Benevity logo" class="h-16 md:h-12">
-            </div>
-        </div>
-    </Banner>
-    <ProgramBanner 
-        title="Childhood Cancer"
-        description="Lions Clubs International has adopted Childhood Cancer as an initiative on a global level. Each year, more than 300,000 children are diagnosed with cancer across the world. This means that a child is diagnosed with cancer every 2 minutes. The Lions have begun working with this initiative to explore new ways in which Lions can help children with cancer in our own communities."
-        link={programDirectories.childhoodCancer}
-        src="/graphics/brands/logo-cc-fullcolor.svg"
-        bg={["from-cc-gold", "to-cc-light-gold"]} />
-    <ProgramBanner 
-        title="Diabetes Awareness And Action"
-        description="We serve to reduce the prevalence of diabetes and to improve the quality of life for those living with diabetes in our communities. During this unprecedented time, the Lions of District 10 have responded with urgency and care developing initiatives and ways to help our communities."
-        link={programDirectories.diabetes}
-        src="/graphics/brands/logo-daa-color.svg"
-        bg={["from-daa-blue", "to-daa-light-blue"]} />
-        
-    <ProgramBanner
-        title="Hunger"
-        id="hunger"
-        description="We see how the hunger and nutrition crisis affects local communities and believe true community improvement depends on the thriving of its members through access to nutritious, healthy, fresh foods. We support hands-on, classroom and online education that teaches people of all ages how to grow, utilize and preserve their own grown food. We serve to improve human flourishing! "
-        link={programDirectories.hunger}
-        src="/graphics/brands/logo-hg-white.svg"
-        bg={["from-hg-green", "to-hg-light-green"]} />
-    <ProgramBanner
-        title="Project KidSight"
-        id="project-kidsight"
-        description="Project KidSight is a program designed to identify treatable and preventable causes of vision loss in preschool children (ages 6 months to 5 years). Children of all ages can be screened but the target of this project is preschool children."
-        link={programDirectories.vision}
-        src="/graphics/brands/logo-pks-fullcolor.svg"
-        bg={["from-pks-pink", "to-pks-light-pink"]} />
-    <Banner>
-        <div class="
-            w-full max-w-2xl p-4 lg:w-3/4 lg:max-w-4xl
+        bg-gradient-to-t from-upls-orange to-upls-light-orange bg-no-repeat`}
+	>
+		<div
+			class="w-3/4 max-w-lg lg:w-3/4 lg:max-w-3xl xl:max-w-4xl
+            flex flex-col gap-8"
+		>
+			<img src="graphics/brands/logo-upls-white.svg" />
+			<p class="font-bold max-w-3xl mx-auto xl:pt-8">
+				Bringing diverse people together to serve their communities is
+				what Lions Clubs are all about. Become part of the largest
+				service and humanitarian organization in the world. Lions and
+				Leos are raising awareness for our causes around the world.
+			</p>
+		</div>
+		<BrandPreviews client:load />
+		<div
+			class="px-12
+                flex flex-col sm:flex-row items-center gap-10"
+		>
+			<div class="flex flex-col items-center gap-6">
+				<img
+					src="/graphics/brands/logo-thrivent.svg"
+					alt="Thrivent logo"
+					class="h-10 md:h-7"
+				/>
+			</div>
+			<div class="flex flex-col items-center gap-3">
+				<img
+					src="/graphics/brands/logo-benevity.svg"
+					alt="Benevity logo"
+					class="h-16 md:h-12"
+				/>
+			</div>
+		</div>
+	</Banner>
+	<ProgramBanner
+		title="Childhood Cancer"
+		link={programDirectories.childhoodCancer}
+		src="/graphics/brands/logo-cc-fullcolor.svg"
+		bg={["from-cc-gold", "to-cc-light-gold"]}
+	>
+		<p>
+			Lions Clubs International has adopted Childhood Cancer as an
+			initiative on a global level. Each year, more than 300,000 children
+			are diagnosed with cancer across the world. This means that a child
+			is diagnosed with cancer every 2 minutes. The Lions have begun
+			working with this initiative to explore new ways in which Lions can
+			help children with cancer in our own communities."
+		</p>
+	</ProgramBanner>
+	<ProgramBanner
+		title="Diabetes Awareness And Action"
+		link={programDirectories.diabetes}
+		src="/graphics/brands/logo-daa-color.svg"
+		bg={["from-daa-blue", "to-daa-light-blue"]}
+	>
+		<p>
+			We serve to reduce the prevalence of diabetes and to improve the
+			quality of life for those living with diabetes in our communities.
+			During this unprecedented time, the Lions of District 10 have
+			responded with urgency and care developing initiatives and ways to
+			help our communities.
+		</p>
+	</ProgramBanner>
+
+	<ProgramBanner
+		title="Hunger"
+		id="hunger"
+		link={programDirectories.hunger}
+		src="/graphics/brands/logo-hg-white.svg"
+		bg={["from-hg-green", "to-hg-light-green"]}
+	>
+		<p>
+			We see how the hunger and nutrition crisis affects local communities
+			and believe true community improvement depends on the thriving of
+			its members through access to nutritious, healthy, fresh foods. We
+			support hands-on, classroom and online education that teaches people
+			of all ages how to grow, utilize and preserve their own grown food.
+			We serve to improve human flourishing!
+		</p>
+	</ProgramBanner>
+	<ProgramBanner
+		title="Project KidSight"
+		id="project-kidsight"
+		link={programDirectories.vision}
+		src="/graphics/brands/logo-pks-fullcolor.svg"
+		bg={["from-pks-pink", "to-pks-light-pink"]}
+	>
+		<p>
+			Project KidSight is a program designed to identify treatable and
+			preventable causes of vision loss in preschool children (ages 6
+			months to 5 years). Children of all ages can be screened but the
+			target of this project is preschool children.
+		</p>
+		<h3 class="font-black text-xl -mb-6 w-full text-center md:text-left">
+			Contact
+		</h3>
+		<p class="-mb-4 w-full text-center md:text-left">
+			Colleen Maki<br />
+			906-280-4365<br />
+			brookcr@charter.net
+		</p>
+		<p class="w-full text-center md:text-left">
+			Rose Potvin<br />
+			906-280-0811<br />
+			repotvin@gmail.com
+		</p>
+	</ProgramBanner>
+	<Banner>
+		<div
+			class="w-full max-w-2xl p-4 lg:w-3/4 lg:max-w-4xl
             bg-white rounded-3xl
-            drop-shadow-white">
-            <iframe
-                src="https://www.google.com/maps/d/u/2/embed?mid=1aoEvqY51HWsa2EdN16vJvD9tFESNYWrY&ehbc=2E312F"
-                width="640"
-                height="480"
-                class="w-full rounded-xl"></iframe>
-        </div>
-    </Banner>
+            drop-shadow-white"
+		>
+			<iframe
+				src="https://www.google.com/maps/d/u/2/embed?mid=1aoEvqY51HWsa2EdN16vJvD9tFESNYWrY&ehbc=2E312F"
+				width="640"
+				height="480"
+				class="w-full rounded-xl"></iframe>
+		</div>
+	</Banner>
 </SiteLayout>

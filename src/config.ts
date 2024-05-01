@@ -9,6 +9,6 @@ type ProgramDirectories = {
 export const programDirectories = {
 	childhoodCancer: "/childhood-cancer",
 	diabetes: "/diabetes-awareness-and-action",
-	vision: "/#project-kidsight",
+	vision: "https://www.district10lions.org/project-kidsight/",
 	hunger: "/hunger",
 } as ProgramDirectories
